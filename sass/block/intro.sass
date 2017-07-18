@@ -1,0 +1,65 @@
+.intro
+	position: relative
+	&::after
+		content: ''
+		position: absolute
+		bottom: -37px
+		left: 0
+		right: 0
+		height: 37px
+		background: url('../img/intro-triangle-2.png') no-repeat center bottom
+
+	&__bg
+		position: relative
+		padding: 86px 0
+		background: url('../img/bg-mobile.jpg') no-repeat top center
+		text-align: center
+		&::after
+			content: ''
+			position: absolute
+			bottom: 0
+			right: 0
+			left: 0
+			height: 80px
+			background: url('../img/intro-triangle.svg') no-repeat center bottom
+
+	&__img
+		width: 280px
+
+	&__content
+		max-width: 500px
+		margin: 0 auto
+		padding: 40px 20px 45px
+		text-align: center
+
+	& .section-title
+		margin-bottom: 30px
+
+	& .section-text
+		line-height: 26px
+
+@media #{$mobile} 
+	@media #{$retina}
+		.intro__bg
+			background: url('../img/bg-mobile@2x.jpg') no-repeat top center
+			background-size: auto 389px
+
+@media #{$tablet}
+	.intro::after
+		display: none
+
+	.intro__bg
+		padding-top: 77px
+		background-image: url('../img/bg-desktop.jpg')
+		background-size: cover
+
+	.intro__img
+		width: 460px
+
+	.intro__content
+		padding: 50px 0
+
+	@media #{$retina}
+		.intro__bg
+			background: url('../img/bg-desktop@2x.jpg') no-repeat top center
+			background-size: cover

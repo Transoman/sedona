@@ -1,0 +1,27 @@
+.logo
+	position: relative
+	height: 56px
+	z-index: 1
+	user-select: none
+
+.logo__img
+	position: absolute
+	top: 0
+	left: 50%
+	width: 102px
+	height: 83px
+	transform: translateX(-50%)
+
+@media #{$tablet}
+	.logo
+		position: absolute
+		top: 0
+		left: 50%
+		width: 102px
+		height: 83px
+		transform: translateX(-50%)
+
+@media #{$desk}
+	.logo, .logo__img
+		width: 188px
+		height: 96px

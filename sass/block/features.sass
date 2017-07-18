@@ -1,0 +1,61 @@
+.features
+	margin: 0
+	padding: 25px 20px 35px
+	list-style-type: none
+
+	&__item
+		position: relative
+		padding-top: 10px
+		padding-left: 50px
+		margin-bottom: 35px
+
+	&__icon-wrapp
+		position: absolute
+		left: 0
+		top: -8px
+		width: 40px
+		text-align: center
+
+	&__icon
+		fill: $accent
+
+	&__title
+		display: block
+		margin-bottom: 15px
+		font-size: 18px
+		font-weight: 700
+
+	&__text
+		font-size: 14px
+		margin: 0
+		line-height: 21px
+
+
+@media #{$tablet}
+	.features
+		display: flex
+		justify-content: space-around
+		padding: 60px 0
+
+	.features__item
+		display: flex
+		flex-direction: column
+		justify-content: center
+		padding: 0
+		margin: 0
+		width: 23%
+		text-align: center
+		&:nth-child(2)
+			order: 2
+
+	.features__title
+		font-size: 21px
+
+	.features__icon-wrapp
+		position: static
+		width: auto
+		margin-bottom: 25px
+
+	.features__icon
+		width: 75px
+		height: 72px

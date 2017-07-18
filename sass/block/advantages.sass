@@ -1,0 +1,81 @@
+.advantages
+	&__content
+		padding: 60px 30px 40px
+		background-color: $accent
+		color: #fff
+		text-align: center
+		& .section-title
+			margin-bottom: 15px
+			color: #fff
+
+	&__number
+		display: inline-block
+		margin-bottom: 20px
+
+	&__img
+		display: block
+		margin: 0 auto
+
+	&__list-wrapp
+		background-color: $light-gray
+
+		.advantages__item
+			position: relative
+			&::after
+				content: ''
+				position: absolute
+				left: 50%
+				transform: translateX(-50%)
+				bottom: 0
+				width: 85%
+				border-bottom: 1px solid #d6d6d6
+			&:last-child::after
+				display: none
+
+
+		.advantages__content
+			padding: 25px 35px
+			background: none
+			color: $main
+
+		.section-title
+			color: #000
+
+
+@media #{$tablet}
+	.advantages__item
+		display: flex
+		&:nth-child(3) .advantages__content
+			order: 2
+
+	.advantages__img-wrapp
+		height: 256px
+		overflow: hidden
+
+	.advantages__content
+		padding: 40px
+		width: 45%
+		max-width: 400px
+
+	.advantages__content .section-title
+		font-size: 21px
+
+	.advantages__list-wrapp
+		display: flex
+		justify-content: space-around
+		padding: 45px 0
+		.advantages__item
+			width: 23%
+			&::after
+				display: none
+		.advantages__content
+			width: auto
+			padding: 0
+		.section-title
+			padding: 0 16%
+
+@media #{$desk}
+	.advantages__content
+		padding: 50px
+		.section-title
+			padding: 0 60px
