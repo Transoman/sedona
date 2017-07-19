@@ -380,15 +380,13 @@ template {
   font-family: "PTSans";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/PTSansRegular/PTSansRegular.woff2") format("woff2");
-  src: url("../fonts/PTSansRegular/PTSansRegular.woff") format("woff"); }
+  src: url("../fonts/PTSansRegular/PTSansRegular.woff2") format("woff2"), url("../fonts/PTSansRegular/PTSansRegular.woff") format("woff"); }
 
 @font-face {
   font-family: "PTSans";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/PTSansBold/PTSansBold.woff2") format("woff2");
-  src: url("../fonts/PTSansBold/PTSansBold.woff") format("woff"); }
+  src: url("../fonts/PTSansBold/PTSansBold.woff2") format("woff2"), url("../fonts/PTSansBold/PTSansBold.woff") format("woff"); }
 
 *,
 *:before,
@@ -615,7 +613,7 @@ img {
   .features__icon-wrapp {
     position: absolute;
     left: 0;
-    top: -8px;
+    top: 0;
     width: 40px;
     text-align: center; }
   .features__icon {
@@ -833,9 +831,9 @@ img {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
     padding: 0;
     margin: 0;
     width: 23%;
