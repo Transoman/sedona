@@ -1,18 +1,20 @@
 .intro
-	position: relative
-	&::after
-		content: ''
-		position: absolute
-		bottom: -37px
-		left: 0
-		right: 0
-		height: 37px
-		background: url('../img/intro-triangle-2.png') no-repeat center bottom
+
+	&--triangle
+		position: relative
+		&::after
+			content: ''
+			position: absolute
+			bottom: -37px
+			left: 0
+			right: 0
+			height: 37px
+			background: url('../img/intro-triangle-2.png') no-repeat center bottom
 
 	&__bg
 		position: relative
-		padding: 86px 0
-		background: url('../img/bg-mobile.jpg') no-repeat top center
+		padding: 50px 0 65px
+		background: url('../img/bg-mobile.jpg') no-repeat center bottom
 		text-align: center
 		&::after
 			content: ''
@@ -23,8 +25,14 @@
 			height: 80px
 			background: url('../img/intro-triangle.svg') no-repeat center bottom
 
+	&__bg--main
+		padding: 86px 0
+		background-position: bottom center
+		.intro__img
+			width: 280px
+
 	&__img
-		width: 280px
+		width: 230px
 
 	&__content
 		max-width: 500px
@@ -41,7 +49,10 @@
 @media #{$mobile} 
 	@media #{$retina}
 		.intro__bg
-			background: url('../img/bg-mobile@2x.jpg') no-repeat top center
+			background: url('../img/bg-mobile@2x.jpg') no-repeat center bottom
+			// background-size: auto 389px
+
+		.intro__bg--main
 			background-size: auto 389px
 
 @media #{$tablet}
@@ -49,9 +60,13 @@
 		display: none
 
 	.intro__bg
-		padding-top: 77px
-		background-image: url('../img/bg-desktop.jpg')
-		background-size: cover
+		padding: 100px 120px
+		background: url('../img/bg-desktop.jpg') no-repeat center bottom
+
+	.intro__bg--main
+		padding: 77px 0 90px
+		.intro__img
+			width: 460px
 
 	.intro__img
 		width: 460px
@@ -61,5 +76,8 @@
 
 	@media #{$retina}
 		.intro__bg
-			background: url('../img/bg-desktop@2x.jpg') no-repeat top center
-			background-size: cover
+			background: url('../img/bg-desktop@2x.jpg') no-repeat center bottom
+			background-size: auto 518px
+
+		.intro__bg--main
+			// background-size: cover

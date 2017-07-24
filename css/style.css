@@ -526,9 +526,9 @@ img {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%); }
 
-.intro {
+.intro--triangle {
   position: relative; }
-  .intro::after {
+  .intro--triangle::after {
     content: '';
     position: absolute;
     bottom: -37px;
@@ -536,30 +536,41 @@ img {
     right: 0;
     height: 37px;
     background: url("../img/intro-triangle-2.png") no-repeat center bottom; }
-  .intro__bg {
-    position: relative;
-    padding: 86px 0;
-    background: url("../img/bg-mobile.jpg") no-repeat top center;
-    text-align: center; }
-    .intro__bg::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      height: 80px;
-      background: url("../img/intro-triangle.svg") no-repeat center bottom; }
-  .intro__img {
+
+.intro__bg {
+  position: relative;
+  padding: 50px 0 65px;
+  background: url("../img/bg-mobile.jpg") no-repeat center bottom;
+  text-align: center; }
+  .intro__bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 80px;
+    background: url("../img/intro-triangle.svg") no-repeat center bottom; }
+
+.intro__bg--main {
+  padding: 86px 0;
+  background-position: bottom center; }
+  .intro__bg--main .intro__img {
     width: 280px; }
-  .intro__content {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 40px 20px 45px;
-    text-align: center; }
-  .intro .section-title {
-    margin-bottom: 30px; }
-  .intro .section-text {
-    line-height: 26px; }
+
+.intro__img {
+  width: 230px; }
+
+.intro__content {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px 20px 45px;
+  text-align: center; }
+
+.intro .section-title {
+  margin-bottom: 30px; }
+
+.intro .section-text {
+  line-height: 26px; }
 
 .advantages__content {
   padding: 60px 30px 40px;
@@ -647,11 +658,59 @@ img {
 
 .map {
   position: relative;
-  height: 350px; }
+  height: 350px;
+  text-align: center; }
 
 #map {
   width: 100%;
   height: 100%; }
+
+.gallery__item {
+  margin: 0;
+  padding: 20px;
+  border-top: 1px solid #e5e5e5; }
+  .gallery__item:last-child {
+    border-bottom: 1px solid #e5e5e5; }
+
+.gallery__img {
+  display: block;
+  margin: 0 auto; }
+
+.gallery__content {
+  padding: 20px 0 0; }
+
+.gallery__title {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000; }
+
+.gallery__author {
+  margin: 0;
+  margin-bottom: 15px;
+  text-transform: none; }
+
+.gallery__like {
+  font-weight: 700; }
+
+.gallery__icon-like {
+  vertical-align: bottom;
+  margin-right: 12px;
+  fill: #b2b2b2; }
+
+.gallery-video__content {
+  padding: 30px 35px 70px;
+  text-align: center; }
+  .gallery-video__content .section-title {
+    margin-bottom: 25px; }
+
+.gallery-video__wrapp {
+  max-width: 800px;
+  margin: 0 auto; }
+
+.gallery-video__video {
+  width: 100%; }
 
 .page-footer {
   padding: 35px 0 25px;
@@ -724,6 +783,8 @@ img {
     width: auto;
     padding: 0; } }
   @media (min-width: 768px) {
+  .nav {
+    z-index: 1; }
   .nav__toggle {
     display: none; }
   .nav__list {
@@ -776,9 +837,12 @@ img {
   .intro::after {
     display: none; }
   .intro__bg {
-    padding-top: 77px;
-    background-image: url("../img/bg-desktop.jpg");
-    background-size: cover; }
+    padding: 100px 120px;
+    background: url("../img/bg-desktop.jpg") no-repeat center bottom; }
+  .intro__bg--main {
+    padding: 77px 0 90px; }
+    .intro__bg--main .intro__img {
+      width: 460px; }
   .intro__img {
     width: 460px; }
   .intro__content {
@@ -860,6 +924,46 @@ img {
     margin-bottom: 40px; }
     .hotel__desc br {
       display: block; }
+  .gallery__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 7.81%;
+    padding-right: 7.81%; }
+  .gallery__item {
+    width: 50%;
+    padding: 0;
+    border: 0; }
+    .gallery__item:first-child {
+      width: 100%; }
+      .gallery__item:first-child .gallery__img-wrapp {
+        height: 400px; }
+    .gallery__item:last-child {
+      border: 0; }
+    .gallery__item:nth-child(2n + 3) .gallery__content {
+      background-color: #eaeaea; }
+  .gallery__img-wrapp {
+    height: 267px;
+    overflow: hidden; }
+  .gallery__img {
+    width: 100%; }
+  .gallery__content {
+    position: relative;
+    padding: 20px;
+    background-color: #f2f2f2; }
+  .gallery__author {
+    margin: 0; }
+  .gallery__like {
+    position: absolute;
+    right: 20px;
+    top: 30px; }
+  .gallery-video {
+    padding: 60px 7.81%; }
+  .gallery-video__content {
+    max-width: 500px;
+    margin: 0 auto; }
   .page-footer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -876,8 +980,8 @@ img {
     margin-bottom: 0; } }
   @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (-o-min-device-pixel-ratio: 3/2), (min-width: 768px) and (min-resolution: 144dpi), (min-width: 768px) and (min-resolution: 1.5dppx) {
   .intro__bg {
-    background: url("../img/bg-desktop@2x.jpg") no-repeat top center;
-    background-size: cover; } }
+    background: url("../img/bg-desktop@2x.jpg") no-repeat center bottom;
+    background-size: auto 518px; } }
   @media (min-width: 1200px) {
     body {
       background-color: #f2f2f2; }
@@ -896,7 +1000,29 @@ img {
   .hotel {
     padding-bottom: 65px; }
   .hotel__desc {
-    margin-bottom: 45px; } }
+    margin-bottom: 45px; }
+  .gallery__list {
+    padding: 0; }
+  .gallery__item {
+    position: relative;
+    width: 33.33%; }
+    .gallery__item:nth-child(2n + 3) .gallery__content {
+      background-color: rgba(0, 0, 0, 0.3); }
+    .gallery__item:first-child .gallery__img-wrapp {
+      height: auto; }
+  .gallery__img-wrapp {
+    height: auto; }
+  .gallery__content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3); }
+  .gallery__title {
+    color: #fff; }
+  .gallery__icon-like {
+    fill: #fff; } }
   @media (max-width: 767px) {
   .nav--opened .nav__toggle {
     top: 10px;
@@ -931,5 +1057,6 @@ img {
     display: none; } }
   @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
   .intro__bg {
-    background: url("../img/bg-mobile@2x.jpg") no-repeat top center;
+    background: url("../img/bg-mobile@2x.jpg") no-repeat center bottom; }
+  .intro__bg--main {
     background-size: auto 389px; } }
