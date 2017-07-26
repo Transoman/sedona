@@ -1,0 +1,344 @@
+.review-form-wrapp
+	padding-bottom: 35px
+
+.review-form
+	&__block
+		margin: 0
+		padding: 20px 20px 0
+		border: 0
+		border-top: 1px solid $gray
+
+	&__head
+		margin: 0
+		margin-bottom: 25px
+		font-size: 18px
+		line-height: 26px
+		font-weight: 700
+		color: #000
+		text-align: center
+
+	&__block-wrapp
+		display: flex
+		align-items: center
+		margin-bottom: 20px
+
+	&__title
+		margin-right: 18px
+		text-transform: uppercase
+
+	&__input
+		height: 58px
+		flex-grow: 1
+		width: 100%
+		padding: 0 20px
+		border: 4px solid transparent
+		outline: none
+		background-color: $bg
+		font-family: $font-family
+		font-weight: 700
+		font-size: 18px
+		transition: all .25s ease
+		color: #000
+		&::placeholder
+			color: #000
+		&:hover
+			background-color: #e5e5e5
+		&:focus
+			background-color: #fff
+			border: 4px solid #e5e5e5
+
+
+	&__block--contact
+		.review-form__title
+			display: block
+			margin-bottom: 10px
+			margin-left: 20px
+
+		.review-form__input
+			padding-right: 78px
+
+	&__block-wrapp--phone,
+	&__block-wrapp--email
+		position: relative
+		flex-direction: column
+		align-items: flex-start
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			right: 0
+			width: 58px
+			height: 58px
+
+	&__block-wrapp--phone::after
+		background: #e6e6e6 url('../img/icon-phone.svg') no-repeat center
+		background-size: 18px 18px
+
+	&__block-wrapp--email::after
+		background: #e6e6e6 url('../img/icon-mail.svg') no-repeat center
+		background-size: 16px auto
+
+	&__error-phone
+		position: relative
+		bottom: -10px
+		display: none
+		padding-left: 20px
+		color: #ff5c5c
+		text-transform: none
+
+	&__error-phone--active
+		display: block
+
+	&__block--impression
+		.review-form__head
+			margin-bottom: 40px
+
+	&__radio
+		display: none
+		&:checked + label::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 17px
+			width: 22px
+			height: 22px
+			border-radius: 50%
+			background: $main
+			transition: all .25s
+
+	&__title-radio
+		display: block
+		position: relative
+		padding-left: 77px
+		margin-bottom: 50px
+		text-transform: none
+		font-weight: 700
+		font-size: 18px
+		cursor: pointer
+		&::before
+			content: ''
+			position: absolute
+			top: -17px
+			left: 0
+			width: 56px
+			height: 56px
+			border-radius: 50%
+			background: $bg
+			transition: all .25s ease
+		&:hover::before
+			background-color: $gray
+		&:active
+			&::before
+				background-color: #d5d5d5
+			.review-form__radio:checked + &::after
+				background: rgba($main, .3)
+
+
+	&__checkbox
+		display: none
+		&:checked + label::after
+			content: ''
+			position: absolute
+			display: block
+			width: 15px
+			height: 23px
+			top: 0
+			left: 20px
+			border-right: 4px solid $main
+			border-bottom: 4px solid $main
+			transform: rotate(45deg)
+
+	&__title-checkbox
+		position: relative
+		display: block
+		margin-bottom: 55px
+		padding-left: 77px
+		font-size: 18px
+		font-weight: 700
+		text-transform: none
+		cursor: pointer
+		&::before
+			content: ''
+			position: absolute
+			top: -13px
+			left: 0
+			width: 56px
+			height: 56px
+			border-radius: 4px
+			background-color: $bg
+			transition: all .25s ease
+		&:hover::before
+			background: $gray
+		&:active
+			&::before
+				background: #d5d5d5
+			.review-form__checkbox:checked + &::after
+				border-color: rgba($main, .3)
+
+	&__textarea
+		width: 100%
+		height: 160px
+		padding: 20px
+		margin-bottom: 50px
+		resize: none
+		background: $bg
+		border: 4px solid transparent
+		outline: none
+		font-family: $font-family
+		font-weight: 700
+		font-size: 18px
+		color: #000
+		transition: all .25s ease
+		&:hover
+			background-color: #e5e5e5
+		&:focus
+			background-color: #fff
+			border: 4px solid #e5e5e5
+		&::placeholder
+			color: #000
+
+	&__block--submit
+		border: 0
+
+	&__submit
+		max-width: 100%
+
+	&__required-field
+		display: none
+
+@media #{$tablet}
+	.review-form-wrapp
+		padding-right: 7.81%
+		padding-left: 7.81%
+
+	.review-form
+		display: flex
+		flex-wrap: wrap
+		flex-direction: row
+
+	.review-form__block
+		width: 100%
+		border: 0
+		padding: 0
+
+	.review-form__block--contact
+		margin-bottom: 30px
+
+	.review-form__block--impression
+		order: -1
+		width: 50%
+		padding-right: 50px
+		.review-form__head
+			text-align: left
+
+	.review-form__block--name
+		width: 50%
+		margin-bottom: 70px
+		padding-left: 55px
+		border-left: 1px solid #dbdbdb
+		.review-form__head
+			text-align: left
+
+	.review-form__block--attraction
+		margin-bottom: 30px
+
+	.review-form__head
+		margin-bottom: 55px
+		font-size: 21px
+
+	.review-form__head--hidden
+		display: none
+
+	.review-form__head--line
+		position: relative
+		&::before, &::after
+			content: ''
+			position: absolute
+			width: 25%
+			top: 50%
+			transform: translateY(-50%)
+			border-top: 1px solid #dbdbdb
+		&::before
+			left: 0
+		&::after
+			right: 0
+
+	.review-form__checkbox-wrapp
+		display: flex
+		flex-wrap: wrap
+		max-width: 470px
+		margin: 0 auto
+
+	.review-form__title-checkbox
+		width: 50%
+
+	.review-form__error-phone
+		position: absolute
+		bottom: auto
+		top: -25px
+		right: 0
+
+	.review-form__block--impression
+		.review-form__head
+			margin-bottom: 73px
+
+	.review-form__title-radio
+		margin-bottom: 58px
+
+	.review-form__block--submit
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+	.review-form__submit
+		max-width: 324px
+
+	.review-form__required-field
+		display: inline
+
+@media #{$desk}
+	.review-form-wrapp
+		padding-right: 10%
+		padding-left: 10%
+		padding-bottom: 60px
+
+	.review-form__block--impression
+		.review-form__head
+			padding-left: 80px
+
+	.review-form__head--line
+		&::after, &::before
+			width: 30%
+
+	.review-form__contact-wrapp
+		display: flex
+		align-items: center
+
+	.review-form__block--contact
+		.review-form__title
+			margin-left: 0
+		.review-form__head
+			margin-bottom: 70px
+
+	.review-form__title--hidden
+		display: none
+
+	.review-form__block-wrapp--phone
+		margin-right: 80px
+		width: 316px
+
+	.review-form__block-wrapp--email
+		width: 316px
+
+	.review-form__error-phone
+		right: auto
+
+	.review-form__checkbox-wrapp
+		max-width: 100%
+		justify-content: space-between
+
+	.review-form__title-checkbox
+		width: auto
+
+	.review-form__submit
+		max-width: 480px

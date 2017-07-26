@@ -14,7 +14,7 @@
 	&__bg
 		position: relative
 		padding: 50px 0 65px
-		background: url('../img/bg-mobile.jpg') no-repeat center bottom
+		background: #DDEBF4 url('../img/bg-mobile.jpg') no-repeat center bottom
 		text-align: center
 		&::after
 			content: ''
@@ -49,8 +49,7 @@
 @media #{$mobile} 
 	@media #{$retina}
 		.intro__bg
-			background: url('../img/bg-mobile@2x.jpg') no-repeat center bottom
-			// background-size: auto 389px
+			background: #DDEBF4 url('../img/bg-mobile@2x.jpg') no-repeat center bottom
 
 		.intro__bg--main
 			background-size: auto 389px
@@ -61,10 +60,10 @@
 
 	.intro__bg
 		padding: 100px 120px
-		background: url('../img/bg-desktop.jpg') no-repeat center bottom
+		background: #DDEBF4 url('../img/bg-desktop.jpg') no-repeat center bottom
 
 	.intro__bg--main
-		padding: 77px 0 90px
+		padding: 75px 0 90px
 		.intro__img
 			width: 460px
 
@@ -73,11 +72,17 @@
 
 	.intro__content
 		padding: 50px 0
+		
+	.intro__content--inner
+		.section-title
+			font-size: 30px
 
 	@media #{$retina}
 		.intro__bg
-			background: url('../img/bg-desktop@2x.jpg') no-repeat center bottom
+			background: #DDEBF4 url('../img/bg-desktop@2x.jpg') no-repeat center bottom
 			background-size: auto 518px
 
-		.intro__bg--main
-			// background-size: cover
+@media #{$desk}
+	.intro__content--inner
+		padding-top: 100px
+		padding-bottom: 65px

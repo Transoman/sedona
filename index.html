@@ -9,8 +9,8 @@
 		<title>Sedona</title>
 
 		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+		<link rel="shortcut icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+		<link rel="shortcut icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
 		<link rel="manifest" href="img/favicon/manifest.json">
 		<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="theme-color" content="#ffffff">
@@ -37,7 +37,7 @@
 							<a href="photo.html" class="nav__link">Фото и видео</a>
 						</li>
 						<li class="nav__item">
-							<a href="#" class="nav__link">Форма отзыва</a>
+							<a href="review.html" class="nav__link">Форма отзыва</a>
 						</li>
 						<li class="nav__item">
 							<a href="#" class="nav__link">HTML academy</a>
@@ -71,7 +71,10 @@
 
 			<section class="advantages">
 
+				<h2 class="visually-hidden">Достопримечательности Седоны</h2>
+
 				<article class="advantages__item">
+
 					<div class="advantages__content">
 						<h3 class="section-title">НАСТОЯЩИЙ ГОРОДОК</h3>
 						<span class="advantages__number">— №1 —</span>
@@ -157,7 +160,7 @@
 						<div class="advantages__content">
 							<h3 class="section-title">КРАСИВАЯ ДОРОГА</h3>
 							<span class="advantages__number">— №4 —</span>
-							<p class="section-text">ЕХАТЬ В СЕДОНУ ИЗ ЛАС-ВЕГАСА совсем НЕ СКУЧНО!</p>
+							<p class="section-text">ЕХАТЬ В СЕДОНУ ИЗ ЛАС-ВЕГАСА совсем не СКУЧНО!</p>
 						</div>
 					</article>
 
@@ -174,15 +177,41 @@
 
 			<section class="hotel">
 
+				<h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
+
 				<b class="hotel__title">ЗАИНТЕРЕСОВАЛИСЬ?</b>
-
 				<p class="hotel__desc">Укажите предполагаемые даты поездки <br>и мы покажем вам лучшие предложения гостиниц в седоне</p>
-
 				<a href="#" class="btn hotel__btn-search">НАЙТИ гостиницу</a>
+
+				<div class="modal modal-hotel">
+					<button class="modal__close">Закрыть</button>
+					<form action="#" class="hotel-form" method="post">
+						<label for="arrival-date" class="hotel-form__title">ДАТА ЗАЕЗДА:</label>
+						<input type="date" name="arrival_date" id="arrival-date" class="hotel-form__input">
+
+						<label for="departure-date" class="hotel-form__title">ДАТА ВЫЕЗДА:</label>
+						<input type="date" name="departure_date" id="departure-date" class="hotel-form__input">
+
+						<label for="adults" class="hotel-form__title">Взрослые:</label>
+						<span class="hotel-form__minus hotel-form__minus--adults">-</span>
+						<input type="text" name="adults" id="adults" value="2" class="hotel-form__input hotel-form__number" disabled>
+						<span class="hotel-form__plus hotel-form__plus--adults">+</span>
+
+						<label for="children" class="hotel-form__title">Дети:</label>
+						<span class="hotel-form__minus hotel-form__minus--children">-</span>
+						<input type="text" name="children" id="children" value="0" class="hotel-form__input hotel-form__number" disabled>
+						<span class="hotel-form__plus hotel-form__plus--children">+</span>
+
+						<button type="submit" class="btn hotel-form__submit">Поиск</button>
+					</form>
+				</div>
 
 			</section>
 
 			<section class="map">
+
+				<h2 class="visually-hidden">Седона на карте</h2>
+
 				<div id="map">
 					<picture>
 						<source media="(min-width: 1200px)" srcset="img/map-desktop.jpg">
@@ -229,7 +258,13 @@
 
 		</div>
 
+
+
 		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<script src="js/picturefill.min.js"></script>
 		<script src="js/common.js"></script>
+		<script>
+			initMap();
+		</script>
 	</body>
 </html>
